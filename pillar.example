@@ -49,7 +49,7 @@ uwsgi:
     cmd: '--ini /etc/uwsgi-emperor/emperor.ini'
 
   # vassal configuration for uwsgi emperor
-  vassal:
+  vassals:
     managed:
       test_app.ini:
         enabled: True
