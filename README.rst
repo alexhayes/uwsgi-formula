@@ -95,6 +95,26 @@ Manages the installation of uwsgi package.
 
 Manages the startup and running state of the uwsgi emperor service.
 
+``uwsgi.emperor.upstart``
+-------------------------
+
+An alternative to ``uwsgi.emperor.service`` that uses upstart to manage the 
+uwsgi-emperor service.
+
+Example usage::
+
+    include:
+      - uwsgi.emperor.config
+      - uwsgi.emperor.rundir
+      - uwsgi.emperor.vassal_config
+      - uwsgi.emperor.upstart
+
+``uwsgi.emperor.rundir``
+-------------------------
+
+Creates a directory that can contain socket and pid files for use by your 
+vassals.
+
 ``uwsgi.emperor.vassal_config``
 -------------------------------
 
@@ -106,5 +126,4 @@ the content of the files and does not bind them to the service calls.
 
 Manages the uwsgi emperor vassals ini files and binds them to the service
 calls.
-
 
