@@ -1,8 +1,5 @@
 {% from "uwsgi/map.jinja" import uwsgi, sls_block with context %}
 
-include:
-  - uwsgi.emperor
-
 uwsgi_emperor_dir:
   file.directory:
     - name: {{ uwsgi.lookup.emperor_dir }}

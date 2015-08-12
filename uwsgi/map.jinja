@@ -85,6 +85,18 @@
     'managed': {},
   },
 
+  'run': {
+    'path': '/var/run/uwsgi-emperor',
+    'uid': 'www-data',
+    'gid': 'www-data',
+    'dir_mode': 775,
+    'file_mode': 775,
+  },
+
+  'upstart': {
+    'cmd': '--ini /etc/uwsgi-emperor/emperor.ini'
+  }
+
 }, merge=True) %}
 
 
