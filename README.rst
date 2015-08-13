@@ -105,15 +105,8 @@ Example usage::
 
     include:
       - uwsgi.emperor.config
-      - uwsgi.emperor.rundir
       - uwsgi.emperor.vassal_config
       - uwsgi.emperor.upstart
-
-``uwsgi.emperor.rundir``
--------------------------
-
-Creates a directory that can contain socket and pid files for use by your 
-vassals.
 
 ``uwsgi.emperor.vassal_config``
 -------------------------------

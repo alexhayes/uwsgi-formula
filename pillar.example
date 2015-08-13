@@ -36,17 +36,16 @@ uwsgi:
       gid: 'www-data'
       emperor: '/etc/uwsgi-emperor/vassals'
 
-  # This is a path you can put uwsgi sockets and pid files in
-  run:
-    path: /var/run/uwsgi-emperor/
-    uid: 'www-data'
-    gid: 'www-data'
-    dir_mode: 775
-    file_mode: 775
-
   # Run emperor using upstart, rather than system package
   upstart:
     cmd: '--ini /etc/uwsgi-emperor/emperor.ini'
+    run:
+      # Creates a path that can contain sockets and pid files.
+      # Set run: None or False to disable.
+      path: /var/run/uwsgi-emperor/
+      uid: 'www-data'
+      gid: 'www-data'
+      mode: 775
 
   # vassal configuration for uwsgi emperor
   vassals:

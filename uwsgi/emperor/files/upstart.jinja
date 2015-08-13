@@ -7,6 +7,13 @@ description "uWSGI Emperor"
 start on runlevel [2345]
 stop on runlevel [06]
 
+{% if config.run %}
+pre-start script
+    mkdir -p -m0{{ config.run.mode }} {{ config.run.path }}
+    chown {{ config.run.uid }}:{{ config.run.gid }} {{ config.run.path }}
+end script
+{% endif %}
+
 respawn
 
 exec uwsgi {{ config.cmd }}
