@@ -38,7 +38,7 @@ uwsgi:
 
   # Run emperor using upstart, rather than system package
   upstart:
-    cmd: '--ini /etc/uwsgi-emperor/emperor.ini'
+    cmd: 'uwsgi --ini /etc/uwsgi-emperor/emperor.ini'
     run:
       # Creates a path that can contain sockets and pid files.
       # Set run: None or False to disable.

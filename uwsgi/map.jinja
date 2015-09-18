@@ -21,6 +21,8 @@
       'vassal_use_symlink'      : False,
       'emperor_config'          : 'emperor.ini',
       'plugins'                 : ['uwsgi-plugin-python'],
+      'pip_bin_env'             : '/usr/local/bin/pip',
+      'pip_user'                : 'root',
     },
     'Arch': {
       'server_pkg'              : 'uwsgi',
@@ -37,6 +39,8 @@
       'vassal_use_symlink'      : False,
       'emperor_config'          : 'emperor.ini',
       'plugins'                 : ['uwsgi-plugin-python','uwsgi-plugin-python2'],
+      'pip_bin_env'             : '/usr/local/bin/pip',
+      'pip_user'                : 'root',
     },
     'RedHat': {
       'server_pkg'              : 'uwsgi',
@@ -52,6 +56,8 @@
       'vassal_use_symlink'      : False,
       'emperor_config'          : 'uwsgi.ini',
       'plugins'                 : ['uwsgi-plugin-python','uwsgi-plugin-python27'],
+      'pip_bin_env'             : '/usr/local/bin/pip',
+      'pip_user'                : 'root',
     },
 
   }, default='Debian' ),
@@ -102,7 +108,7 @@
   },
 
   'upstart': {
-    'cmd': '--ini /etc/uwsgi-emperor/emperor.ini',
+    'cmd': 'uwsgi --ini /etc/uwsgi-emperor/emperor.ini',
     'run': {
       'path': '/var/run/uwsgi-emperor',
       'uid': 'www-data',
