@@ -36,7 +36,7 @@ uwsgi:
       gid: 'www-data'
       emperor: '/etc/uwsgi-emperor/vassals'
 
-  # Run emperor using upstart, rather than system package
+  # Run emperor using upstart
   upstart:
     cmd: 'uwsgi --ini /etc/uwsgi-emperor/emperor.ini'
     run:
@@ -46,6 +46,10 @@ uwsgi:
       uid: 'www-data'
       gid: 'www-data'
       mode: 775
+
+  # Run emperor using systemd
+  upstart:
+    cmd: 'uwsgi --ini /etc/uwsgi-emperor/emperor.ini'
 
   # vassal configuration for uwsgi emperor
   vassals:
